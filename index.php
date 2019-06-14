@@ -63,7 +63,7 @@
 		  overflow-y: auto;
 		  transform: rotate(-90deg) translateY(-100px);
 	  	  transform:rotate(90deg) ;
-	  	  display: flex;
+	  	  display: flex; 
 	  	  align-items: center;
 		}*/
 		/*.horizontal-scroll-wrapper {
@@ -74,7 +74,7 @@
 		  transform: rotate(-90deg) translateY(-100px);
 		  transform-origin: center top;
 	  	  transform:rotate(90deg) ;
-	  	  display: flex;
+	  	  display: flex; 
 	  	  align-items: center;
 		}
 		.horizontal-scroll-wrapper > div {
@@ -161,7 +161,7 @@
 								          '</div>';
 							i++;
 		    			}
-			      		$(".reeee").html(isi_top_track);
+			      		$(".reeee").html(isi_top_track);	
 		    		}
 		    	})
 		  	} else {
@@ -422,6 +422,6 @@
       <div class="mdl-layout__obfuscator"></div>
     </div>
    <!--  <a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/blog/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">View Source</a> -->
-
+  
 </body>
 </html>

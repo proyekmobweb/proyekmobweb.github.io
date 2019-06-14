@@ -1,0 +1,30 @@
+{
+  "name": "RED Song.FM",
+  "short_name": "RED Song.FM",
+  "icons": [
+    {
+      "src": "images/152.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "images/196.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "images/favicon.ico",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "http://opensource.petra.ac.id/~m26416041/proyekmobweb/index.php",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff",
+  "theme_color": "#3f51b5",
+  "description": "A simple Instagram Clone, implementing a lot of PWA love.",
+  "dir": "ltr",
+  "lang": "en-US"
+}
