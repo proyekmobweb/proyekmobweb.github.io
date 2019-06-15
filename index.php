@@ -45,30 +45,6 @@
 	    .mdl-grid.center-items {
 		  justify-content: center;
 		}
-	/*	.horizontal-scroll-wrapper {
-		  height: 800px;
-		  overflow-x: hidden;
-		  overflow-y: auto;
-		  transform: rotate(-90deg) translateY(-100px);
-	  	  transform:rotate(90deg) ;
-	  	  display: flex;
-	  	  align-items: center;
-		}*/
-		/*.horizontal-scroll-wrapper {
-		  width: 50px;
-		  height: 800px;
-		  overflow-x: hidden;
-		  overflow-y: auto;
-		  transform: rotate(-90deg) translateY(-100px);
-		  transform-origin: center top;
-	  	  transform:rotate(90deg) ;
-	  	  display: flex;
-	  	  align-items: center;
-		}
-		.horizontal-scroll-wrapper > div {
-	  	  transform:rotate(90deg) ;
-		  transform-origin: right top;
-		}*/
 		@media screen and (max-width: 400px) {
 		  #hp {
 		    margin-left: 640%;
@@ -119,7 +95,7 @@
   		  		var i=0;
   		    	data.results.forEach(nowplaying => {
   		    		var poster = "url('https://image.tmdb.org/t/p/w500/"+nowplaying.poster_path+"');";
-              var urllink = "'https://opensource.petra.ac.id/~m26416041/movie/details.php?tipe=1&id="+i+"'";
+              var urllink = "'https://proyekmobweb.github.io/details.php?tipe=1&id="+i+"'";
   		    		if(i<10){
   		    			if(i==0){
   		    				moviee+='<div class="mdl-card coffee-pic mdl-cell mdl-cell--3-col mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--3-col-phone" id="hp" onclick="location.href='+urllink+';" style="cursor: pointer;">'+
@@ -167,7 +143,7 @@
             var i=0;
   		    	data.results.forEach(movie => {
   		    		var poster = "url('https://image.tmdb.org/t/p/w500/"+movie.poster_path+"');";
-              var urllink = "'https://opensource.petra.ac.id/~m26416041/movie/details.php?tipe=2&id="+i+"'";
+              var urllink = "'https://proyekmobweb.github.io/details.php?tipe=2&id="+i+"'";
 
   		      		moviee+='<div class="mdl-card coffee-pic mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-cell--3-col-tablet mdl-cell--2-col-phone" onclick="location.href='+urllink+';" style="cursor: pointer;">'+
   							            '<div class="mdl-card__media mdl-color-text--grey-50" style="background-size:cover;background-color:black;background-repeat:no-repeat; background-image: '+poster+'">'+
@@ -210,22 +186,8 @@
             <!-- Navigation -->
             <div class="android-navigation-container">
               <nav class="android-navigation mdl-navigation">
-                <!-- <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Sign Up</a> -->
-                <!-- <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Log In</a> -->
               </nav>
             </div>
-            <!-- <span class="android-mobile-title mdl-layout-title">
-              <img class="android-logo-image" src="images/logo.png" width="20">
-            </span> -->
-            <!-- <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
-              <i class="material-icons">more_vert</i>
-            </button> -->
-            <!-- <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-              <li class="mdl-menu__item">5.0 Lollipop</li>
-              <li class="mdl-menu__item">4.4 KitKat</li>
-              <li disabled class="mdl-menu__item">4.3 Jelly Bean</li>
-              <li class="mdl-menu__item">Android History</li>
-            </ul> -->
           </div>
         </div>
         <div class="android-drawer mdl-layout__drawer">
@@ -243,124 +205,6 @@
 
         <div class="demo-blog__posts center-items songs mdl-grid">
 
-        	<!-- <div id="isi_top_track"> -->
-        <!-- 		<div class="mdl-card coffee-pic mdl-cell mdl-cell--6-col mdl-cell--4-col-desktop">
-            <div class="mdl-card__media mdl-color-text--grey-50">
-              <h3><a href="entry.html">Coffee Pic</a></h3>
-            </div>
-            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-              <div class="minilogo"></div>
-              <div>
-                <strong>The Newist</strong>
-                <span>2 days ago</span>
-              </div>
-            </div>
-          </div>
-          <div class="mdl-card coffee-pic mdl-cell mdl-cell--6-col mdl-cell--4-col-desktop">
-            <div class="mdl-card__media mdl-color-text--grey-50">
-              <h3><a href="entry.html">Coffee Pic</a></h3>
-            </div>
-            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-              <div class="minilogo"></div>
-              <div>
-                <strong>The Newist</strong>
-                <span>2 days ago</span>
-              </div>
-            </div>
-          </div> -->
-        	<!-- </div> -->
-
-         <!--  <div class="mdl-card coffee-pic mdl-cell mdl-cell--8-col">
-            <div class="mdl-card__media mdl-color-text--grey-50">
-              <h3><a href="entry.html">Coffee Pic</a></h3>
-            </div>
-            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-              <div class="minilogo"></div>
-              <div>
-                <strong>The Newist</strong>
-                <span>2 days ago</span>
-              </div>
-            </div>
-          </div>
-          <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
-            <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent">
-              <i class="material-icons mdl-color-text--white" role="presentation">add</i>
-              <span class="visuallyhidden">add</span>
-            </button>
-            <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
-              <img src="images/logo.png">
-              +1,337
-            </div>
-            <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
-              <div>
-                <strong>The Newist</strong>
-              </div>
-              <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menubtn">
-                <li class="mdl-menu__item">About</li>
-                <li class="mdl-menu__item">Message</li>
-                <li class="mdl-menu__item">Favorite</li>
-                <li class="mdl-menu__item">Search</li>
-              </ul>
-              <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                <i class="material-icons" role="presentation">more_vert</i>
-                <span class="visuallyhidden">show menu</span>
-              </button>
-            </div>
-          </div>
-          <div class="mdl-card on-the-road-again mdl-cell mdl-cell--12-col">
-            <div class="mdl-card__media mdl-color-text--grey-50">
-              <h3><a href="entry.html">On the road again</a></h3>
-            </div>
-            <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
-              Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
-            </div>
-            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-              <div class="minilogo"></div>
-              <div>
-                <strong>The Newist</strong>
-                <span>2 days ago</span>
-              </div>
-            </div>
-          </div>
-          <div class="mdl-card amazing mdl-cell mdl-cell--12-col">
-            <div class="mdl-card__title mdl-color-text--grey-50">
-              <h3 class="quote"><a href="entry.html">I couldn’t take any pictures but this was an amazing thing…</a></h3>
-            </div>
-            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-              Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
-            </div>
-            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-              <div class="minilogo"></div>
-              <div>
-                <strong>The Newist</strong>
-                <span>2 days ago</span>
-              </div>
-            </div>
-          </div> -->
-         <!--  <div class="mdl-card shopping mdl-cell mdl-cell--12-col">
-            <div class="mdl-card__media mdl-color-text--grey-50">
-              <h3><a href="entry.html">Shopping</a></h3>
-            </div>
-            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-              Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
-            </div>
-            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-              <div class="minilogo"></div>
-              <div>
-                <strong>The Newist</strong>
-                <span>2 days ago</span>
-              </div>
-            </div>
-          </div> -->
-          <!-- <nav class="demo-nav mdl-cell mdl-cell--12-col">
-            <div class="section-spacer"></div>
-            <a href="entry.html" class="demo-nav__button" title="show more">
-              More
-              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                <i class="material-icons" role="presentation">arrow_forward</i>
-              </button>
-            </a>
-          </nav> -->
         </div>
         <footer class="mdl-mini-footer">
           <div class="mdl-mini-footer--left-section">
@@ -384,8 +228,7 @@
       </main>
       <div class="mdl-layout__obfuscator"></div>
     </div>
-   <!--  <a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/blog/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">View Source</a> -->
-  <script src="src/js/app.js"></script>
+    <script src="src/js/app.js"></script>
 
 </body>
 </html>

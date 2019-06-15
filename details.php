@@ -22,11 +22,6 @@
     <meta name="msapplication-TileColor" content="#3372DF">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
-
     <link href='//fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -71,7 +66,7 @@
         if (request.status >= 200 && request.status < 400) {
             var hasil = data.results[id];
             var backdrop_image = "url('https://image.tmdb.org/t/p/w500/"+hasil.backdrop_path+"');";
-  
+
             var moviee='<div class="mdl-card__media mdl-color-text--grey-50" style="background-size:contain; background-repeat:no-repeat; background-color:black;background-image: '+backdrop_image+'">'+
               '<h3>'+hasil.title+'</h3>'+
             '</div>'+
@@ -161,8 +156,8 @@
             '</div>'+
           '</div>'
           ;
-            
-          $(".reeee").html(moviee); 
+
+          $(".reeee").html(moviee);
 
           var prevnext="";
           if (id==0){
@@ -200,8 +195,8 @@
                 '</button>'+
               '</a>';
           }
-          
-          $(".prevnext").html(prevnext); 
+
+          $(".prevnext").html(prevnext);
 
         } else {
           console.log('error')
@@ -224,7 +219,7 @@
           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col reeee">
             </div>
             <nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col prevnext">
-            
+
           </nav>
         </div>
         <footer class="mdl-mini-footer">
