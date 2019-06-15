@@ -13,7 +13,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/~m26416041/movie/index.html",
+  "start_url": "/index.html",
   "scope": ".",
   "display": "standalone",
   "orientation": "portrait-primary",
