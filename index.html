@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/~m26416041/movie/styles.css">
-    <link rel="manifest" href="/~m26416041/movie/manifest.json">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="manifest" href="/manifest.json">
 <!--     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps."> -->
     <title>RED Movie</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="/~m26416041/movie/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="/favicon.ico">
 
-    <link rel="icon" sizes="192x192" href="/~m26416041/movie/images/192.png">
+    <link rel="icon" sizes="192x192" href="/images/192.png">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="RED Movie">
-    <link rel="apple-touch-icon-precomposed" href="/~m26416041/movie/images/152.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/152.png">
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="/~m26416041/movie/images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileImage" content="/images/touch/ms-touch-icon-144x144-precomposed.png">
     <meta name="msapplication-TileColor" content="#3372DF">
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
@@ -51,7 +51,7 @@
 		  overflow-y: auto;
 		  transform: rotate(-90deg) translateY(-100px);
 	  	  transform:rotate(90deg) ;
-	  	  display: flex; 
+	  	  display: flex;
 	  	  align-items: center;
 		}*/
 		/*.horizontal-scroll-wrapper {
@@ -62,7 +62,7 @@
 		  transform: rotate(-90deg) translateY(-100px);
 		  transform-origin: center top;
 	  	  transform:rotate(90deg) ;
-	  	  display: flex; 
+	  	  display: flex;
 	  	  align-items: center;
 		}
 		.horizontal-scroll-wrapper > div {
@@ -119,7 +119,7 @@
   		  		var i=0;
   		    	data.results.forEach(nowplaying => {
   		    		var poster = "url('https://image.tmdb.org/t/p/w500/"+nowplaying.poster_path+"');";
-              var urllink = "'/~m26416041/movie/details.html?tipe=1&id="+i+"'";
+              var urllink = "'/details.html?tipe=1&id="+i+"'";
   		    		if(i<10){
   		    			if(i==0){
   		    				moviee+='<div class="mdl-card coffee-pic mdl-cell mdl-cell--3-col mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--3-col-phone" id="hp" onclick="location.href='+urllink+';" style="cursor: pointer;">'+
@@ -146,7 +146,7 @@
   								          '</div>';
   							i++;
   		    			}
-  			      		$(".reeee").html(moviee);	
+  			      		$(".reeee").html(moviee);
   		    		}
   		    	})
   		  	} else {
@@ -167,7 +167,7 @@
             var i=0;
   		    	data.results.forEach(movie => {
   		    		var poster = "url('https://image.tmdb.org/t/p/w500/"+movie.poster_path+"');";
-              var urllink = "'/~m26416041/movie/details.html?tipe=2&id="+i+"'";
+              var urllink = "'/details.html?tipe=2&id="+i+"'";
 
   		      		moviee+='<div class="mdl-card coffee-pic mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-cell--3-col-tablet mdl-cell--2-col-phone" onclick="location.href='+urllink+';" style="cursor: pointer;">'+
   							            '<div class="mdl-card__media mdl-color-text--grey-50" style="background-size:cover;background-color:black;background-repeat:no-repeat; background-image: '+poster+'">'+
@@ -195,7 +195,7 @@
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
           <div class="mdl-layout__header-row" style="background-color:#1fa4b5">
             <span class="android-title mdl-layout-title" style="color:white; font-weight: bold;">
-              <img class="android-logo-image" src="/~m26416041/movie/images/logo.png" width="30"> <span style="color:red">RED</span> Movie
+              <img class="android-logo-image" src="/images/logo.png" width="30"> <span style="color:red">RED</span> Movie
             </span>
             <!-- Add spacer, to align navigation to the right in desktop -->
             <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -230,7 +230,7 @@
         </div>
         <div class="android-drawer mdl-layout__drawer">
        <span class="mdl-layout-title">
-         <img class="android-logo-image" src="/~m26416041/movie/images/logo.png">
+         <img class="android-logo-image" src="/images/logo.png">
        </span>
      </div>
 
@@ -384,7 +384,7 @@
       </main>
       <div class="mdl-layout__obfuscator"></div>
     </div>
-  <script src="/~m26416041/movie/src/js/app.js"></script>
+  <script src="/src/js/app.js"></script>
 
 </body>
 </html>
