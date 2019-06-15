@@ -119,7 +119,7 @@
   		  		var i=0;
   		    	data.results.forEach(nowplaying => {
   		    		var poster = "url('https://image.tmdb.org/t/p/w500/"+nowplaying.poster_path+"');";
-              var urllink = "'https://proyekmobweb.gituhub.io/movie/details.php?tipe=1&id="+i+"'";
+              var urllink = "'https://opensource.petra.ac.id/~m26416041/movie/details.php?tipe=1&id="+i+"'";
   		    		if(i<10){
   		    			if(i==0){
   		    				moviee+='<div class="mdl-card coffee-pic mdl-cell mdl-cell--3-col mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--3-col-phone" id="hp" onclick="location.href='+urllink+';" style="cursor: pointer;">'+
@@ -167,7 +167,7 @@
             var i=0;
   		    	data.results.forEach(movie => {
   		    		var poster = "url('https://image.tmdb.org/t/p/w500/"+movie.poster_path+"');";
-              var urllink = "'https://proyekmobweb.gituhub.io/movie/details.php?tipe=2&id="+i+"'";
+              var urllink = "'https://opensource.petra.ac.id/~m26416041/movie/details.php?tipe=2&id="+i+"'";
 
   		      		moviee+='<div class="mdl-card coffee-pic mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-cell--3-col-tablet mdl-cell--2-col-phone" onclick="location.href='+urllink+';" style="cursor: pointer;">'+
   							            '<div class="mdl-card__media mdl-color-text--grey-50" style="background-size:cover;background-color:black;background-repeat:no-repeat; background-image: '+poster+'">'+
