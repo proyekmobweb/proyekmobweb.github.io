@@ -228,7 +228,7 @@
       </main>
       <div class="mdl-layout__obfuscator"></div>
     </div>
-    <script src="src/js/app.js"></script>
+    <!-- <script src="src/js/app.js"></script> -->
 
 </body>
 </html>
