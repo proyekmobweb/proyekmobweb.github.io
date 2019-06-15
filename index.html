@@ -172,27 +172,27 @@
 		request.send()
 
 		var request1 = new XMLHttpRequest()
-		request1.open('GET', 'http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=d65dcb037c7dc07cc77471001b319bd5&format=json', true)
+		request1.open('GET', 'https://api.themoviedb.org/3/movie/popular?api_key=3a04a6aae4cf952296b13fd4c5368983&language=en-US', true)
 		request1.onload = function() {
 		  // Begin accessing JSON data here
 		  var data = JSON.parse(this.response)
 
 			if (request1.status >= 200 && request1.status < 400) {
-		  		var isi_top_track="";
-		    	data.tracks.track.forEach(song => {
-		      		isi_top_track+='<div class="mdl-card coffee-pic mdl-cell mdl-cell--3-col mdl-cell--3-col-desktop">'+
+		  		var moviee="";
+		    	data.results.forEach(movie => {
+		      		moviee+='<div class="mdl-card coffee-pic mdl-cell mdl-cell--3-col mdl-cell--3-col-desktop">'+
 							            '<div class="mdl-card__media mdl-color-text--grey-50">'+
-							              '<h3><a href="entry.html">'+song.name+'</a></h3>'+
+							              '<h3><a href="entry.html">'+movie.title+'</a></h3>'+
 							            '</div>'+
 							            '<div class="mdl-card__supporting-text meta mdl-color-text--grey-600">'+
 							              '<div class="minilogo"></div>'+
 							              '<div>'+
-							                '<strong>'+song.artist.name+'</strong>'+
-							                '<span>2 days ago</span>'+
+							                '<strong>'+movie.original_title+'</strong>'+
+							                '<span>'+movie.release_date+'</span>'+
 							              '</div>'+
 							            '</div>'+
 							          '</div>';
-		      		$(".songs").html(isi_top_track);
+		      		$(".songs").html(moviee);
 		    	})
 		  	} else {
 		    	console.log('error')
