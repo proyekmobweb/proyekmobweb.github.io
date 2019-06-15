@@ -1,49 +1,37 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>RED Song.FM</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+<!--     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps."> -->
+    <title>RED Movie</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="favicon.ico">
+
     <link rel="icon" sizes="192x192" href="images/192.png">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="RED Song.FM">
+    <meta name="apple-mobile-web-app-title" content="RED Movie">
     <link rel="apple-touch-icon-precomposed" href="images/152.png">
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
     <meta name="msapplication-TileColor" content="#3372DF">
-
-    <link rel="stylesheet" href="/src/css/style.css">
-    <link rel="manifest" crossorigin="use-credentials" href="manifest.json">
-      <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script src="/src/js/app.js"></script>
-
-    <!-- <link rel="icon" type="image/x-icon" href="/favicon.ico"> -->
-    <!-- <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="images/favicon.ico">
-    <link rel="shortcut icon" sizes="152x152" href="/images/152.png">
-    <link rel="shortcut icon" sizes="196x196" href="/images/196.png"> -->
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-orange.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
-    <link rel="stylesheet" href="styles.css">
     <style>
 	    #view-source {
 	      position: fixed;
@@ -122,92 +110,92 @@
     </style>
     <script type="text/javascript">
     	var request = new XMLHttpRequest()
-		request.open('GET', 'http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=d65dcb037c7dc07cc77471001b319bd5&format=json', true)
-		request.onload = function() {
-		  // Begin accessing JSON data here
-		  var data = JSON.parse(this.response)
+  		request.open('GET', 'https://api.themoviedb.org/3/movie/now_playing?api_key=3a04a6aae4cf952296b13fd4c5368983&language=en-US&page=1', true)
+  		request.onload = function() {
+  		  var data = JSON.parse(this.response)
 
-			if (request.status >= 200 && request.status < 400) {
-		  		var isi_top_track="";
-		  		var i=0;
-		    	data.artists.artist.forEach(artis => {
-		    		if(i<10){
-		    			if(i==0){
-		    				isi_top_track+='<div class="mdl-card coffee-pic mdl-cell mdl-cell--3-col mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--3-col-phone" id="hp">'+
-								            '<div class="mdl-card__media mdl-color-text--grey-50">'+
-								              '<h3><a href="entry.html">'+artis.name+'</a></h3>'+
-								            '</div>'+
-								            '<div class="mdl-card__supporting-text meta mdl-color-text--grey-600 center-items"  style="justify-content:center;">'+
-								            //   '<div class="minilogo"></div>'+
-								              '<div>'+
-								                '<strong><img src="images/play.png" width="20"> Playcount : '+artis.playcount+'</strong>'+
-								                '<strong><img src="images/listener.png" width="20"> Listener : '+artis.listeners+'</strong>'+
-								              '</div>'+
-								            '</div>'+
-								          '</div>';
-							i++;
-		    			} else {
-		    				isi_top_track+='<div class="mdl-card coffee-pic card-content mdl-cell mdl-cell--3-col mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--3-col-phone" style="min-width: 250px;">'+
-								            '<div class="mdl-card__media mdl-color-text--grey-50">'+
-								              '<h3><a href="entry.html">'+artis.name+'</a></h3>'+
-								            '</div>'+
-								            '<div class="mdl-card__supporting-text meta mdl-color-text--grey-600 center-items"  style="justify-content:center;">'+
-								            //   '<div class="minilogo"></div>'+
-								              '<div>'+
-								                '<strong><img src="images/play.png" width="20"> Playcount : '+artis.playcount+'</strong>'+
-								                '<strong><img src="images/listener.png" width="20"> Listener : '+artis.listeners+'</strong>'+
-								              '</div>'+
-								            '</div>'+
-								          '</div>';
-							i++;
-		    			}
-			      		$(".reeee").html(isi_top_track);	
-		    		}
-		    	})
-		  	} else {
-		    	console.log('error')
-		  	}
-		}
+  			if (request.status >= 200 && request.status < 400) {
+  		  		var moviee="";
+  		  		var i=0;
+  		    	data.results.forEach(nowplaying => {
+  		    		var poster = "url('https://image.tmdb.org/t/p/w500/"+nowplaying.poster_path+"');";
+              var urllink = "'https://opensource.petra.ac.id/~m26416041/movie/details.php?tipe=1&id="+i+"'";
+  		    		if(i<10){
+  		    			if(i==0){
+  		    				moviee+='<div class="mdl-card coffee-pic mdl-cell mdl-cell--3-col mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--3-col-phone" id="hp" onclick="location.href='+urllink+';" style="cursor: pointer;">'+
+  								            '<div class="mdl-card__media mdl-color-text--grey-50" style="background-size:cover; background-image: '+poster+'">'+
+  								            '</div>'+
+  								            '<div class="mdl-card__supporting-text meta mdl-color-text--grey-600 center-items"  style="justify-content:center;">'+
+  								              '<div>'+
+  								                '<strong>'+nowplaying.title+'</strong>'+
+  								                '<strong>'+nowplaying.release_date+'</strong>'+
+  								              '</div>'+
+  								            '</div>'+
+  								          '</div>';
+  							i++;
+  		    			} else {
+  		    				moviee+='<div class="mdl-card coffee-pic card-content mdl-cell mdl-cell--3-col mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--3-col-phone" style="min-width: 250px;" onclick="location.href='+urllink+';" style="cursor: pointer;">'+
+  								            '<div class="mdl-card__media mdl-color-text--grey-50" style="background-size:cover; background-image: '+poster+'">'+
+  								            '</div>'+
+  								            '<div class="mdl-card__supporting-text meta mdl-color-text--grey-600 center-items"  style="justify-content:center;">'+
+  								              '<div>'+
+  								                '<strong>'+nowplaying.title+'</strong>'+
+  								                '<strong>'+nowplaying.release_date+'</strong>'+
+  								              '</div>'+
+  								            '</div>'+
+  								          '</div>';
+  							i++;
+  		    			}
+  			      		$(".reeee").html(moviee);	
+  		    		}
+  		    	})
+  		  	} else {
+  		    	console.log('error')
+  		  	}
+  		}
 
-		request.send()
+  		request.send()
 
-		var request1 = new XMLHttpRequest()
-		request1.open('GET', 'http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=d65dcb037c7dc07cc77471001b319bd5&format=json', true)
-		request1.onload = function() {
-		  // Begin accessing JSON data here
-		  var data = JSON.parse(this.response)
+  		var request1 = new XMLHttpRequest()
+  		request1.open('GET', 'https://api.themoviedb.org/3/movie/popular?api_key=3a04a6aae4cf952296b13fd4c5368983&language=en-US', true)
+  		request1.onload = function() {
+  		  // Begin accessing JSON data here
+  		  var data = JSON.parse(this.response)
 
-			if (request1.status >= 200 && request1.status < 400) {
-		  		var isi_top_track="";
-		    	data.tracks.track.forEach(song => {
-		      		isi_top_track+='<div class="mdl-card coffee-pic mdl-cell mdl-cell--3-col mdl-cell--3-col-desktop">'+
-							            '<div class="mdl-card__media mdl-color-text--grey-50">'+
-							              '<h3><a href="entry.html">'+song.name+'</a></h3>'+
-							            '</div>'+
-							            '<div class="mdl-card__supporting-text meta mdl-color-text--grey-600">'+
-							              '<div class="minilogo"></div>'+
-							              '<div>'+
-							                '<strong>'+song.artist.name+'</strong>'+
-							                '<span>2 days ago</span>'+
-							              '</div>'+
-							            '</div>'+
-							          '</div>';
-		      		$(".songs").html(isi_top_track);
-		    	})
-		  	} else {
-		    	console.log('error')
-		  	}
-		}
+  			if (request1.status >= 200 && request1.status < 400) {
+  		  		var moviee="";
+            var i=0;
+  		    	data.results.forEach(movie => {
+  		    		var poster = "url('https://image.tmdb.org/t/p/w500/"+movie.poster_path+"');";
+              var urllink = "'https://opensource.petra.ac.id/~m26416041/movie/details.php?tipe=2&id="+i+"'";
 
-		request1.send()
+  		      		moviee+='<div class="mdl-card coffee-pic mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-cell--3-col-tablet mdl-cell--2-col-phone" onclick="location.href='+urllink+';" style="cursor: pointer;">'+
+  							            '<div class="mdl-card__media mdl-color-text--grey-50" style="background-size:cover;background-color:black;background-repeat:no-repeat; background-image: '+poster+'">'+
+  							            '</div>'+
+  							            '<div class="mdl-card__supporting-text meta mdl-color-text--grey-600">'+
+  							              '<div>'+
+  							                '<strong>'+movie.title+'</strong>'+
+  							                '<span>'+movie.release_date+'</span>'+
+  							              '</div>'+
+  							            '</div>'+
+  							          '</div>';
+  		      		$(".songs").html(moviee);
+                i++;
+  		    	})
+  		  	} else {
+  		    	console.log('error')
+  		  	}
+  		}
+
+  		request1.send()
     </script>
   </head>
   <body>
     <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
-          <div class="mdl-layout__header-row" style="background-color:#ffe28a">
-            <span class="android-title mdl-layout-title">
-              <img class="android-logo-image" src="images/headphone.gif" width="50">
+          <div class="mdl-layout__header-row" style="background-color:#1fa4b5">
+            <span class="android-title mdl-layout-title" style="color:white; font-weight: bold;">
+              <img class="android-logo-image" src="images/logo.png" width="30"> <span style="color:red">RED</span> Movie
             </span>
             <!-- Add spacer, to align navigation to the right in desktop -->
             <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -226,57 +214,32 @@
                 <!-- <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Log In</a> -->
               </nav>
             </div>
-            <span class="android-mobile-title mdl-layout-title">
-              <img class="android-logo-image" src="images/totoro.png" width="50">
-            </span>
-            <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+            <!-- <span class="android-mobile-title mdl-layout-title">
+              <img class="android-logo-image" src="images/logo.png" width="20">
+            </span> -->
+            <!-- <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
               <i class="material-icons">more_vert</i>
-            </button>
-            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+            </button> -->
+            <!-- <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
               <li class="mdl-menu__item">5.0 Lollipop</li>
               <li class="mdl-menu__item">4.4 KitKat</li>
               <li disabled class="mdl-menu__item">4.3 Jelly Bean</li>
               <li class="mdl-menu__item">Android History</li>
-            </ul>
+            </ul> -->
           </div>
         </div>
         <div class="android-drawer mdl-layout__drawer">
        <span class="mdl-layout-title">
-         <img class="android-logo-image" src="images/totoro.png">
+         <img class="android-logo-image" src="images/logo.png">
        </span>
-       <nav class="mdl-navigation">
-         <a class="mdl-navigation__link" href="">Phones</a>
-         <a class="mdl-navigation__link" href="">Tablets</a>
-         <a class="mdl-navigation__link" href="">Wear</a>
-         <a class="mdl-navigation__link" href="">TV</a>
-         <a class="mdl-navigation__link" href="">Auto</a>
-         <a class="mdl-navigation__link" href="">One</a>
-         <a class="mdl-navigation__link" href="">Play</a>
-         <div class="android-drawer-separator"></div>
-         <span class="mdl-navigation__link" href="">Versions</span>
-         <a class="mdl-navigation__link" href="">Lollipop 5.0</a>
-         <a class="mdl-navigation__link" href="">KitKat 4.4</a>
-         <a class="mdl-navigation__link" href="">Jelly Bean 4.3</a>
-         <a class="mdl-navigation__link" href="">Android history</a>
-         <div class="android-drawer-separator"></div>
-         <span class="mdl-navigation__link" href="">Resources</span>
-         <a class="mdl-navigation__link" href="">Official blog</a>
-         <a class="mdl-navigation__link" href="">Android on Google+</a>
-         <a class="mdl-navigation__link" href="">Android on Twitter</a>
-         <div class="android-drawer-separator"></div>
-         <span class="mdl-navigation__link" href="">For developers</span>
-         <a class="mdl-navigation__link" href="">App developer resources</a>
-         <a class="mdl-navigation__link" href="">Android Open Source Project</a>
-         <a class="mdl-navigation__link" href="">Android SDK</a>
-       </nav>
      </div>
 
       <main>
-      	<h1 class="mdc-typography--headline1" style="font-weight: bold; letter-spacing: 10px; text-align: center;color:black">R<span style="color:red">E</span>D S<span style="color:red">ON</span>G.FM</h1>
-      	<h3 style="font-weight: bold; letter-spacing: 10px; text-align: center;color:black">10 TOP ARTIST</h3>
+      	<h1 class="mdc-typography--headline1" style="font-weight: bold; letter-spacing: 10px; text-align: center;color:white"><span style="color:red">RED</span> MOVIE</h1>
+      	<h4 style="font-weight: bold; letter-spacing: 10px; text-align: center;color:white">LATEST MOVIES</h4>
       	<div class="demo-blog__posts center-items reeee" style="overflow-x: auto; display: flex; justify-content: center; align-content: center;">
-		</div>
-      	<h3 style="font-weight: bold; letter-spacing: 10px; text-align: center;color:black ">MOST POPULAR SONGS</h3>
+		</div><br>
+      	<h4 style="font-weight: bold; letter-spacing: 10px; text-align: center;color:white ">MOST POPULAR MOVIES</h4>
 
         <div class="demo-blog__posts center-items songs mdl-grid">
 
@@ -422,6 +385,7 @@
       <div class="mdl-layout__obfuscator"></div>
     </div>
    <!--  <a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/blog/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">View Source</a> -->
-  
+  <script src="src/js/app.js"></script>
+
 </body>
 </html>

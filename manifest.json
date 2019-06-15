@@ -1,6 +1,6 @@
 {
-  "name": "RED Song.FM",
-  "short_name": "RED Song.FM",
+  "name": "RED Movie",
+  "short_name": "RED Movie",
   "icons": [
     {
       "src": "images/152.png",
@@ -18,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "http://opensource.petra.ac.id/~m26416041/proyekmobweb/index.php",
+  "start_url": "http://opensource.petra.ac.id/~m26416041/movie/index.php",
   "scope": ".",
   "display": "standalone",
   "orientation": "portrait-primary",
