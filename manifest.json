@@ -3,22 +3,17 @@
   "short_name": "RED Movie",
   "icons": [
     {
-      "src": "images/152.png",
+      "src": "images/washbear-logo-01-192x192.png",
       "type": "image/png",
-      "sizes": "256x256"
+      "sizes": "192x192"
     },
     {
-      "src": "images/196.png",
-      "type": "image/png",
-      "sizes": "384x384"
-    },
-    {
-      "src": "images/favicon.ico",
+      "src": "images/Icon_Bird_512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "/index.php",
+  "start_url": "/~m26416041/movie/index.html",
   "scope": ".",
   "display": "standalone",
   "orientation": "portrait-primary",
